@@ -393,7 +393,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
     { id: 'strategy', label: 'Strategy', icon: Target },
     { id: 'financials', label: 'Financials', icon: DollarSign },
     { id: 'portfolio', label: 'Portfolio', icon: BarChart3 },
-    { id: 'market', label: 'Market Analysis', icon: Globe },
+    { id: 'market', label: 'Market', icon: Globe },
     { id: 'team', label: 'Team', icon: Users },
     { id: 'transparency', label: 'Transparency', icon: Shield },
     { id: 'ai-assistant', label: 'AI Advisor', icon: Brain },
@@ -421,7 +421,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             {/* Left content */}
             <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
               <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
-                NAVADA Nexus
+                NAVADA <span className="text-3xl md:text-5xl italic font-light">Nexus</span>
               </h1>
               <p className="text-2xl md:text-3xl font-light text-gray-300 mb-4">
                 Connecting talent, technology, and capital for tomorrow.
@@ -4956,9 +4956,8 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             >
               <div>
                 <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-                  NAVADA Nexus
+                  NAVADA <span className="text-lg italic font-light">Nexus</span>
                 </div>
-                <div className="text-xs text-gray-400 font-medium">Connecting talent, technology, and capital for tomorrow.</div>
               </div>
             </motion.div>
 
