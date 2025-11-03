@@ -4,7 +4,10 @@
       "Bash(powershell:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd comprehensive NAVADA VC platform with full features\n\nMajor Features:\n- Portfolio application form with localStorage database\n- About the Fund section with treasury management details\n- Enhanced Quick Actions (Download, Schedule, Apply, LP Portal)\n- Corporate finance terms in FAQ (24 terms total)\n- AI Investment Advisor with RAG and document upload\n- Interactive financial calculators (NPV, Robotics scenario)\n- Thank you modal for submissions\n- Investor portal access modal\n- SME-focused investment philosophy\n\nTechnical Improvements:\n- All Quick Actions now functional\n- Form validation and data persistence\n- Treasury management strategy documented\n- R&D reinvestment from treasury gains\n- Emphasis on SMEs with passion and discipline\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

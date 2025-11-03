@@ -57,7 +57,7 @@ const NavadaVCLanding = () => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Welcome to NAVADA VC. I\'m your AI investment advisor specializing in African tech markets, venture capital analysis, and financial modeling. How can I assist you with your investment inquiries today?'
+      content: 'Welcome to NAVADA Nexus. I\'m your AI investment advisor specializing in African tech markets, venture capital analysis, and financial modeling. Connecting talent, technology, and capital for tomorrow. How can I assist you with your investment inquiries today?'
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
@@ -291,7 +291,7 @@ const NavadaVCLanding = () => {
         ).join('\n');
       }
 
-      const systemPrompt = `You are a senior investment advisor for NAVADA VC, a UK-Africa venture capital fund launching in Q4 2026.
+      const systemPrompt = `You are a senior investment advisor for NAVADA Nexus, a UK-Africa venture capital fund launching in Q4 2026.
 
 Fund Details:
 - Target Size: £200,000 (initial seed round)
@@ -421,10 +421,10 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             {/* Left content */}
             <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
               <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
-                NAVADA VC
+                NAVADA Nexus
               </h1>
               <p className="text-2xl md:text-3xl font-light text-gray-300 mb-4">
-                Premier UK-Africa Venture Capital
+                Connecting talent, technology, and capital for tomorrow.
               </p>
               <p className="mt-4 text-neutral-300 text-lg max-w-2xl leading-relaxed mb-8">
                 Deploying £200,000 in seed capital to accelerate African tech innovation.
@@ -1869,7 +1869,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
           <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-xl p-8 border border-blue-500/20">
             <h3 className="text-2xl font-bold text-blue-400 mb-4">Real-Life Example: How £10K Becomes £45K</h3>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Meet James, who invested £10,000 in NAVADA VC in January 2025. Here's how his investment grows over 5 years at 35% IRR and 4.5x DPI:
+              Meet James, who invested £10,000 in NAVADA Nexus in January 2025. Here's how his investment grows over 5 years at 35% IRR and 4.5x DPI:
             </p>
 
             <div className="space-y-4">
@@ -1996,7 +1996,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                 <div className="text-gray-400 text-xs">£10,114 gain (101%)</div>
               </div>
               <div className="bg-gray-900/50 rounded-lg p-5 border-2 border-emerald-500/50 text-center">
-                <div className="text-emerald-400 font-semibold mb-2 text-lg">NAVADA VC</div>
+                <div className="text-emerald-400 font-semibold mb-2 text-lg">NAVADA Nexus</div>
                 <div className="text-gray-400 text-sm mb-2">35% annual IRR</div>
                 <div className="text-emerald-400 text-3xl font-bold mb-2">£44,840</div>
                 <div className="text-emerald-400 text-sm font-bold">£34,840 gain (348%)</div>
@@ -2198,7 +2198,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             Portfolio Strategy Dashboard
           </h1>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-            Interactive 10-year projection showing how NAVADA VC's £200,000 fund transforms into £4.2M+ through strategic African tech investments
+            Interactive 10-year projection showing how NAVADA Nexus's £200,000 fund transforms into £4.2M+ through strategic African tech investments
           </p>
         </div>
 
@@ -2737,7 +2737,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               </p>
 
               <div className="bg-gray-900/50 rounded-lg p-6 border border-emerald-500/20 mb-6">
-                <div className="font-mono text-sm text-emerald-400 mb-3">NAVADA VC Example:</div>
+                <div className="font-mono text-sm text-emerald-400 mb-3">NAVADA Nexus Example:</div>
                 <div className="space-y-2 text-sm text-gray-300">
                   <div>Year 0: Invest £200,000</div>
                   <div>Year 10: Exit at £4,225,200</div>
@@ -2861,11 +2861,11 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
         <div className="bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-gray-900/30 backdrop-blur-sm rounded-3xl p-12 border border-blue-500/30 shadow-2xl shadow-blue-500/20">
           <div className="text-center mb-12">
             <div className="inline-block bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-emerald-500/20 backdrop-blur-sm rounded-2xl px-8 py-3 mb-6 border border-blue-500/30">
-              <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">About NAVADA VC</span>
+              <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">About The Fund</span>
             </div>
             <h2 className="text-4xl font-bold text-white mb-6">ABOUT THE FUND</h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              NAVADA VC is a visionary micro-venture initiative established to accelerate the growth of Africa's AI, robotics, and innovation economy.
+              NAVADA Nexus is a visionary micro-venture initiative established to accelerate the growth of Africa's AI, robotics, and innovation economy.
             </p>
           </div>
 
@@ -2905,7 +2905,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               <div className="mt-6 bg-blue-500/10 rounded-lg p-6 border border-blue-500/20">
                 <div className="text-blue-400 text-sm font-semibold mb-2">Fund Management</div>
                 <p className="text-gray-300 mb-4">
-                  NAVADA VC will appoint a qualified <strong className="text-white">Fund Manager</strong> with professional experience in finance,
+                  NAVADA Nexus will appoint a qualified <strong className="text-white">Fund Manager</strong> with professional experience in finance,
                   venture capital, or corporate innovation to oversee due diligence, portfolio tracking, and transparent reporting.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 border border-blue-500/20 mt-4">
@@ -2932,7 +2932,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   {
                     step: '1',
                     title: 'Capital Formation',
-                    desc: 'NAVADA VC raises up to £200,000 from investors and partners who wish to support innovation in emerging markets.',
+                    desc: 'NAVADA Nexus raises up to £200,000 from investors and partners who wish to support innovation in emerging markets.',
                     color: 'emerald'
                   },
                   {
@@ -2981,7 +2981,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               </h3>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  NAVADA VC operates on <strong className="text-white">transparency, innovation, and impact</strong>.
+                  NAVADA Nexus operates on <strong className="text-white">transparency, innovation, and impact</strong>.
                 </p>
                 <p>
                   This fund is <strong className="text-amber-400">not a regulated financial institution</strong> or advisory service;
@@ -2991,7 +2991,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   Investors participate with the understanding that all contributions carry <strong className="text-red-400">high risk and long-term potential reward</strong>.
                 </p>
                 <p>
-                  NAVADA VC will publish periodic reports on fund allocation, project milestones, and startup performance.
+                  NAVADA Nexus will publish periodic reports on fund allocation, project milestones, and startup performance.
                 </p>
               </div>
             </div>
@@ -3008,7 +3008,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   of roughly $10,000 – $20,000 in its earliest stage and later achieved a valuation exceeding <strong className="text-emerald-400">$3 billion</strong>.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  NAVADA VC seeks to identify and nurture the next generation of such transformative ventures — focusing on robotics, AI infrastructure,
+                  NAVADA Nexus seeks to identify and nurture the next generation of such transformative ventures — focusing on robotics, AI infrastructure,
                   and digital manufacturing across Africa.
                 </p>
               </div>
@@ -3021,7 +3021,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                 VISION
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                By investing directly in creators and startups rather than traditional education programs, NAVADA VC aims to unlock higher long-term returns —
+                By investing directly in creators and startups rather than traditional education programs, NAVADA Nexus aims to unlock higher long-term returns —
                 both <strong className="text-emerald-400">financial</strong> and <strong className="text-blue-400">societal</strong>.
                 The fund will empower technical talent, stimulate innovation in developing nations, and create a sustainable ecosystem for future builders.
               </p>
@@ -3035,13 +3035,13 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               </h3>
               <div className="space-y-3 text-gray-300 leading-relaxed">
                 <p>
-                  NAVADA VC initiatives are educational and innovation-driven.
+                  NAVADA Nexus initiatives are educational and innovation-driven.
                 </p>
                 <p>
                   Participation does <strong className="text-red-400">not guarantee profit</strong> and involves a significant degree of risk.
                 </p>
                 <p>
-                  All contributors are encouraged to read the <strong className="text-white">Terms for Engagement</strong> before committing funds or collaborating with NAVADA VC.
+                  All contributors are encouraged to read the <strong className="text-white">Terms for Engagement</strong> before committing funds or collaborating with NAVADA Nexus.
                 </p>
               </div>
             </div>
@@ -3113,7 +3113,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               <textarea
                 name="message"
                 rows="4"
-                placeholder="Why do you support NAVADA VC's mission?"
+                placeholder="Why do you support NAVADA Nexus's mission?"
                 className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
               ></textarea>
             </div>
@@ -3197,7 +3197,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
           <h3 className="text-2xl font-bold text-white mb-4">Why AI Makes This Fund Unmissable</h3>
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
             Artificial Intelligence is revolutionizing African tech across all sectors, driving unprecedented interest and adoption.
-            NAVADA VC's £200,000 fund is strategically positioned to capitalize on this AI-driven transformation by funding and educating
+            NAVADA Nexus's £200,000 fund is strategically positioned to capitalize on this AI-driven transformation by funding and educating
             the next generation of African tech founders building AI-powered solutions in FinTech, AgriTech, HealthTech, EdTech, Robotics,
             and Cloud infrastructure.
           </p>
@@ -3326,7 +3326,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               notable: 'Paystack, 54gene'
             },
             {
-              fund: 'NAVADA VC',
+              fund: 'NAVADA Nexus',
               aum: '£200K',
               focus: 'Series A-B',
               geography: '4 markets',
@@ -3339,7 +3339,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className={`rounded-xl p-6 border-2 ${
-                fund.fund === 'NAVADA VC'
+                fund.fund === 'NAVADA Nexus'
                   ? 'bg-emerald-500/10 border-emerald-500/50'
                   : 'bg-gray-900/50 border-gray-700/50'
               }`}
@@ -4216,7 +4216,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
       <div className="text-center">
         <h1 className="text-5xl font-bold text-white mb-6">Get In Touch</h1>
         <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-          Connect with NAVADA VC for investment opportunities, partnerships, and strategic discussions
+          Connect with NAVADA Nexus for investment opportunities, partnerships, and strategic discussions
         </p>
       </div>
 
@@ -4407,7 +4407,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   <Shield className="h-12 w-12 text-emerald-400" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                  NAVADA VC Legal Declaration
+                  NAVADA Nexus Legal Declaration
                 </h1>
                 <p className="text-emerald-400 text-lg font-semibold">
                   African Tech Innovation Investment Fund
@@ -4419,7 +4419,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h2 className="text-xl font-bold text-emerald-400 mb-3">Investment Disclaimer</h2>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    NAVADA VC is a venture capital fund targeting early-stage African technology companies.
+                    NAVADA Nexus is a venture capital fund targeting early-stage African technology companies.
                     All investment opportunities presented on this platform carry inherent risks. Past performance
                     does not guarantee future results. Investors may lose some or all of their invested capital.
                   </p>
@@ -4429,7 +4429,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   <h2 className="text-xl font-bold text-emerald-400 mb-3">Regulatory Compliance</h2>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     This platform is intended for sophisticated investors, accredited investors, and institutional
-                    investors who understand venture capital risks. NAVADA VC operates in compliance with applicable
+                    investors who understand venture capital risks. NAVADA Nexus operates in compliance with applicable
                     securities regulations. By proceeding, you confirm you meet the necessary investor criteria.
                   </p>
                 </div>
@@ -4469,7 +4469,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                 onClick={handleAcceptLegal}
                 className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50"
               >
-                I Accept & Continue to NAVADA VC
+                I Accept & Continue to NAVADA Nexus
               </motion.button>
 
               {/* Footer Note */}
@@ -4538,7 +4538,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                   </motion.a>
 
                   <motion.a
-                    href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}?subject=Investment Discussion Request&body=I would like to schedule a meeting to discuss investment opportunities with NAVADA VC.`}
+                    href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}?subject=Investment Discussion Request&body=I would like to schedule a meeting to discuss investment opportunities with NAVADA Nexus.`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="flex items-center gap-4 bg-gradient-to-r from-emerald-600/20 to-emerald-500/20 hover:from-emerald-600/30 hover:to-emerald-500/30 border border-emerald-500/30 rounded-xl p-6 transition-all duration-300"
@@ -4880,7 +4880,7 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-bold text-white mb-3">Interested in Becoming an LP?</h3>
                   <p className="text-gray-400 mb-4">
-                    NAVADA VC accepts qualified institutional and individual investors. Minimum commitment starts at $250,000.
+                    NAVADA Nexus accepts qualified institutional and individual investors. Minimum commitment starts at $250,000.
                   </p>
                   <motion.a
                     href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}?subject=LP%20Investment%20Inquiry&body=I%20am%20interested%20in%20learning%20more%20about%20becoming%20a%20Limited%20Partner%20with%20NAVADA%20VC.`}
@@ -4956,9 +4956,9 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             >
               <div>
                 <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-                  NAVADA VC
+                  NAVADA Nexus
                 </div>
-                <div className="text-xs text-gray-500">African Tech Investment</div>
+                <div className="text-xs text-gray-400 font-medium">Connecting talent, technology, and capital for tomorrow.</div>
               </div>
             </motion.div>
 
