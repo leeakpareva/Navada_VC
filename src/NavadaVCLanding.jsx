@@ -12,7 +12,7 @@ import {
 import {
   TrendingUp, DollarSign, Globe, Users, Target, Shield,
   Brain, Send, ChevronDown, Menu, X, Maximize2, Heart,
-  BarChart3, MapPin, Mail, Phone, Zap, Cpu, Database
+  BarChart3, MapPin, Mail, Phone, Zap, Cpu, Database, AlertTriangle
 } from 'lucide-react';
 import OpenAI from 'openai';
 
@@ -631,6 +631,97 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               </motion.div>
             );
           })}
+        </div>
+      </motion.section>
+
+      {/* Support Register Form */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <div className="bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-3xl p-12 border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-white mb-4">Support This Initiative</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Join our growing community of supporters who believe in empowering African tech innovation.
+              Your support helps us reach our £200,000 goal faster.
+            </p>
+          </div>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const supporter = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
+              };
+
+              // Save to localStorage
+              const supporters = JSON.parse(localStorage.getItem('navada_supporters') || '[]');
+              supporters.push(supporter);
+              localStorage.setItem('navada_supporters', JSON.stringify(supporters));
+
+              // Update count
+              setSupportCount(supporters.length);
+
+              // Show success message
+              alert('Thank you for your support! You are supporter #' + supporters.length);
+
+              // Reset form
+              e.target.reset();
+            }}
+            className="max-w-2xl mx-auto space-y-6"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-300 mb-2">Your Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-300 mb-2">Email Address *</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="john@example.com"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-300 mb-2">Message (Optional)</label>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Why do you support NAVADA Nexus's mission?"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105"
+              >
+                Register Support
+              </button>
+            </div>
+
+            <p className="text-center text-sm text-gray-400 mt-4">
+              Current Supporters: <span className="font-bold text-emerald-400">{supportCount}</span>
+            </p>
+          </form>
         </div>
       </motion.section>
     </div>
@@ -3047,91 +3138,6 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
             </div>
           </div>
         </div>
-
-        {/* Support Register Form */}
-        <div className="bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-3xl p-12 border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-white mb-4">Support This Initiative</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join our growing community of supporters who believe in empowering African tech innovation.
-              Your support helps us reach our £200,000 goal faster.
-            </p>
-          </div>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.target);
-              const supporter = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message'),
-                timestamp: new Date().toISOString()
-              };
-
-              // Save to localStorage
-              const supporters = JSON.parse(localStorage.getItem('navada_supporters') || '[]');
-              supporters.push(supporter);
-              localStorage.setItem('navada_supporters', JSON.stringify(supporters));
-
-              // Update count
-              setSupportCount(supporters.length);
-
-              // Show success message
-              alert('Thank you for your support! You are supporter #' + supporters.length);
-
-              // Reset form
-              e.target.reset();
-            }}
-            className="max-w-2xl mx-auto space-y-6"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Your Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="John Doe"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="john@example.com"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">Message (Optional)</label>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Why do you support NAVADA Nexus's mission?"
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
-              ></textarea>
-            </div>
-
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105"
-              >
-                Register Support
-              </button>
-            </div>
-
-            <p className="text-center text-sm text-gray-400 mt-4">
-              Current Supporters: <span className="font-bold text-emerald-400">{supportCount}</span>
-            </p>
-          </form>
-        </div>
       </motion.div>
     );
   };
@@ -3504,6 +3510,565 @@ Provide expert, data-driven advice on venture capital, robotics, automation, clo
               <p className="text-emerald-400 text-sm font-medium">{advisor.value}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* SWOT Analysis Section */}
+      <div className="bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-3xl p-12 border border-emerald-500/30">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">NAVADA Catalyst – SWOT Analysis</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Strategic assessment of Lee Akpareva's leadership profile and fund positioning
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Strengths */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-emerald-900/30 backdrop-blur-sm rounded-2xl p-8 border border-emerald-500/30"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                <Target className="h-6 w-6 text-emerald-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-emerald-400">Strengths</h3>
+            </div>
+            <ul className="space-y-3">
+              {[
+                "17+ years of cross-industry digital transformation leadership",
+                "Expert in AI, Robotics, Python, Azure AI Foundry, and LangChain",
+                "Proven experience with Generali, Informa Markets, and global corporates",
+                "MBA-level business acumen with technical depth",
+                "Hands-on founder mindset — able to design, build, and deploy solutions",
+                "Strong network across insurance, fintech, and AI ecosystems",
+                "Ability to translate innovation into measurable business outcomes"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-gray-300">
+                  <span className="text-emerald-400 mt-1">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Weaknesses */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-orange-900/30 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                <Shield className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-orange-400">Weaknesses</h3>
+            </div>
+            <ul className="space-y-3">
+              {[
+                "Limited access to long-term institutional funding at current scale",
+                "High dependence on founder leadership and personal bandwidth",
+                "Early-stage organizational structure — not yet diversified by management layer",
+                "Need for external financial governance and legal fund management expertise",
+                "Limited public brand awareness outside technology networks"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-gray-300">
+                  <span className="text-orange-400 mt-1">⚠</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Opportunities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-blue-900/30 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/30"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                <TrendingUp className="h-6 w-6 text-blue-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-blue-400">Opportunities</h3>
+            </div>
+            <ul className="space-y-3">
+              {[
+                "Africa's emerging AI and robotics ecosystem is underfunded but rapidly growing",
+                "Shift from education investment to innovation investment presents first-mover advantage",
+                "Corporate partnerships seeking ethical AI and frontier technology solutions",
+                "Potential to scale NAVADA Catalyst into a multi-country venture hub",
+                "Growing interest from investors in high-impact, tech-for-good ventures"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-gray-300">
+                  <span className="text-blue-400 mt-1">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Threats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-red-900/30 backdrop-blur-sm rounded-2xl p-8 border border-red-500/30"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                <AlertTriangle className="h-6 w-6 text-red-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-red-400">Threats</h3>
+            </div>
+            <ul className="space-y-3">
+              {[
+                "Regulatory uncertainties in African venture funding and data governance",
+                "Macroeconomic instability may reduce early-stage funding appetite",
+                "Competition from international accelerators entering African markets",
+                "Rapid AI evolution requires continuous reskilling and tech reinvestment",
+                "Reputation risk if fund transparency or results are not clearly communicated"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-gray-300">
+                  <span className="text-red-400 mt-1">✗</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Fund Financial Model & Profit Distribution */}
+      <div className="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-12 border border-gray-700/30">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Fund Financial Model & Profit Distribution</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Transparent breakdown of fund economics, team compensation, and profit sharing across performance scenarios
+          </p>
+        </div>
+
+        {/* Fund Parameters */}
+        <div className="bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-emerald-500/30 mb-12">
+          <h3 className="text-2xl font-bold text-white mb-6">Fund Parameters</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+              <div className="text-gray-400 text-sm mb-2">Total Fund Size</div>
+              <div className="text-3xl font-bold text-emerald-400">£200,000</div>
+            </div>
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+              <div className="text-gray-400 text-sm mb-2">Management Fee</div>
+              <div className="text-3xl font-bold text-blue-400">2% Annual</div>
+            </div>
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+              <div className="text-gray-400 text-sm mb-2">Fund Duration</div>
+              <div className="text-3xl font-bold text-purple-400">5 Years</div>
+            </div>
+            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+              <div className="text-gray-400 text-sm mb-2">Carry on Profit</div>
+              <div className="text-3xl font-bold text-amber-400">20%</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Compensation Structure */}
+        <div className="bg-gray-900/30 rounded-2xl p-8 border border-gray-700/50 mb-12">
+          <h3 className="text-2xl font-bold text-white mb-6">Team Compensation Structure</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="py-4 px-4 text-emerald-400 font-semibold">Team Member</th>
+                  <th className="py-4 px-4 text-emerald-400 font-semibold">Base Salary (Annual)</th>
+                  <th className="py-4 px-4 text-emerald-400 font-semibold">Carry Share</th>
+                  <th className="py-4 px-4 text-emerald-400 font-semibold">Capital Commitment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-800">
+                  <td className="py-4 px-4 text-white font-medium">Lee Akpareva (Managing Partner)</td>
+                  <td className="py-4 px-4 text-gray-300">£15,000</td>
+                  <td className="py-4 px-4 text-gray-300">50%</td>
+                  <td className="py-4 px-4 text-gray-300">£10,000</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-4 px-4 text-white font-medium">Investment Director</td>
+                  <td className="py-4 px-4 text-gray-300">£10,000</td>
+                  <td className="py-4 px-4 text-gray-300">30%</td>
+                  <td className="py-4 px-4 text-gray-300">£0</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-4 px-4 text-white font-medium">Technical Partner</td>
+                  <td className="py-4 px-4 text-gray-300">£8,000</td>
+                  <td className="py-4 px-4 text-gray-300">15%</td>
+                  <td className="py-4 px-4 text-gray-300">£0</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-4 text-white font-medium">Operations Manager</td>
+                  <td className="py-4 px-4 text-gray-300">£7,000</td>
+                  <td className="py-4 px-4 text-gray-300">5%</td>
+                  <td className="py-4 px-4 text-gray-300">£0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Performance Scenarios */}
+        <div className="space-y-8">
+          <h3 className="text-2xl font-bold text-white mb-6">Fund Performance Scenarios & Returns</h3>
+
+          {/* Bear Case - 1x */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-orange-900/30 to-gray-900/30 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h4 className="text-2xl font-bold text-orange-400 mb-2">Bear Case (1x Multiple)</h4>
+                <p className="text-gray-400">Fund breaks even - Total Value: £200,000</p>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-gray-400">Total Fund Profit</div>
+                <div className="text-3xl font-bold text-orange-400">£0</div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { name: "Lee Akpareva", basePay: 75000, carry: 0, capitalGain: 0, total: 75000 },
+                { name: "Investment Director", basePay: 50000, carry: 0, capitalGain: 0, total: 50000 },
+                { name: "Technical Partner", basePay: 40000, carry: 0, capitalGain: 0, total: 40000 },
+                { name: "Operations Manager", basePay: 35000, carry: 0, capitalGain: 0, total: 35000 }
+              ].map((member, idx) => (
+                <div key={idx} className="bg-gray-900/50 rounded-xl p-4 border border-orange-500/20">
+                  <div className="text-white font-semibold mb-3 text-sm">{member.name}</div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Base Pay (5yr)</span>
+                      <span className="text-gray-300">£{member.basePay.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Carry</span>
+                      <span className="text-gray-300">£{member.carry.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Capital Gain</span>
+                      <span className="text-gray-300">£{member.capitalGain.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between pt-2 border-t border-gray-700">
+                      <span className="text-orange-400 font-semibold">Total Income</span>
+                      <span className="text-orange-400 font-bold">£{member.total.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 bg-orange-500/10 rounded-lg p-4 border border-orange-500/30">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Investor Profit Share (80%)</span>
+                <span className="text-orange-400 font-bold text-lg">£0</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Base Case - 2x */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-gradient-to-br from-blue-900/30 to-gray-900/30 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/30"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h4 className="text-2xl font-bold text-blue-400 mb-2">Base Case (2x Multiple)</h4>
+                <p className="text-gray-400">Fund doubles - Total Value: £400,000</p>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-gray-400">Total Fund Profit</div>
+                <div className="text-3xl font-bold text-blue-400">£200,000</div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { name: "Lee Akpareva", basePay: 75000, carry: 20000, capitalGain: 10000, total: 105000 },
+                { name: "Investment Director", basePay: 50000, carry: 12000, capitalGain: 0, total: 62000 },
+                { name: "Technical Partner", basePay: 40000, carry: 6000, capitalGain: 0, total: 46000 },
+                { name: "Operations Manager", basePay: 35000, carry: 2000, capitalGain: 0, total: 37000 }
+              ].map((member, idx) => (
+                <div key={idx} className="bg-gray-900/50 rounded-xl p-4 border border-blue-500/20">
+                  <div className="text-white font-semibold mb-3 text-sm">{member.name}</div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Base Pay (5yr)</span>
+                      <span className="text-gray-300">£{member.basePay.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Carry</span>
+                      <span className="text-gray-300">£{member.carry.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Capital Gain</span>
+                      <span className="text-gray-300">£{member.capitalGain.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between pt-2 border-t border-gray-700">
+                      <span className="text-blue-400 font-semibold">Total Income</span>
+                      <span className="text-blue-400 font-bold">£{member.total.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Investor Profit Share (80%)</span>
+                <span className="text-blue-400 font-bold text-lg">£160,000</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Bull Case - 4x */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-br from-emerald-900/30 to-gray-900/30 backdrop-blur-sm rounded-2xl p-8 border border-emerald-500/30"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h4 className="text-2xl font-bold text-emerald-400 mb-2">Bull Case (4x Multiple)</h4>
+                <p className="text-gray-400">Fund quadruples - Total Value: £800,000</p>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-gray-400">Total Fund Profit</div>
+                <div className="text-3xl font-bold text-emerald-400">£600,000</div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { name: "Lee Akpareva", basePay: 75000, carry: 60000, capitalGain: 30000, total: 165000 },
+                { name: "Investment Director", basePay: 50000, carry: 36000, capitalGain: 0, total: 86000 },
+                { name: "Technical Partner", basePay: 40000, carry: 18000, capitalGain: 0, total: 58000 },
+                { name: "Operations Manager", basePay: 35000, carry: 6000, capitalGain: 0, total: 41000 }
+              ].map((member, idx) => (
+                <div key={idx} className="bg-gray-900/50 rounded-xl p-4 border border-emerald-500/20">
+                  <div className="text-white font-semibold mb-3 text-sm">{member.name}</div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Base Pay (5yr)</span>
+                      <span className="text-gray-300">£{member.basePay.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Carry</span>
+                      <span className="text-gray-300">£{member.carry.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Capital Gain</span>
+                      <span className="text-gray-300">£{member.capitalGain.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between pt-2 border-t border-gray-700">
+                      <span className="text-emerald-400 font-semibold">Total Income</span>
+                      <span className="text-emerald-400 font-bold">£{member.total.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Investor Profit Share (80%)</span>
+                <span className="text-emerald-400 font-bold text-lg">£480,000</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Key Notes */}
+        <div className="mt-12 bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+          <h4 className="text-lg font-bold text-white mb-4">Key Financial Notes</h4>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-400 mt-1">•</span>
+              <span><strong className="text-white">Carry Pool:</strong> 20% of fund profit is distributed among team members based on their carry share percentages</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-400 mt-1">•</span>
+              <span><strong className="text-white">Investor Returns:</strong> 80% of all fund profits go to Limited Partners (LPs)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-400 mt-1">•</span>
+              <span><strong className="text-white">Base Salaries:</strong> Funded from management fees (2% annual on £200K = £4K/year = £20K over 5 years)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-400 mt-1">•</span>
+              <span><strong className="text-white">Lee's Capital:</strong> £10,000 personal investment demonstrates founder commitment and alignment with LPs</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-emerald-400 mt-1">•</span>
+              <span><strong className="text-white">Performance Alignment:</strong> Team compensation heavily weighted toward carry ensures alignment with fund success</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Interactive Visualizations */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Team Income by Scenario Chart */}
+          <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+            <h4 className="text-xl font-bold text-white mb-6">Team Income by Scenario</h4>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart
+                data={[
+                  { member: "Lee Akpareva", "Bear Case": 75000, "Base Case": 105000, "Bull Case": 165000 },
+                  { member: "Investment Director", "Bear Case": 50000, "Base Case": 62000, "Bull Case": 86000 },
+                  { member: "Technical Partner", "Bear Case": 40000, "Base Case": 46000, "Bull Case": 58000 },
+                  { member: "Operations Manager", "Bear Case": 35000, "Base Case": 37000, "Bull Case": 41000 }
+                ]}
+                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
+                <XAxis
+                  dataKey="member"
+                  stroke="#9CA3AF"
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                  tick={{ fontSize: 11 }}
+                />
+                <YAxis
+                  stroke="#9CA3AF"
+                  tickFormatter={(value) => `£${(value / 1000).toFixed(0)}K`}
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1F2937',
+                    border: '1px solid #374151',
+                    borderRadius: '8px',
+                    color: '#fff'
+                  }}
+                  formatter={(value) => `£${value.toLocaleString()}`}
+                />
+                <Legend
+                  wrapperStyle={{ paddingTop: '20px' }}
+                  iconType="square"
+                />
+                <Bar dataKey="Bear Case" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Base Case" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Bull Case" fill="#22c55e" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+            <p className="text-gray-400 text-xs mt-4 text-center">
+              Total income over 5-year fund life including base salary, carry, and capital gains
+            </p>
+          </div>
+
+          {/* Investor Profit by Scenario Chart */}
+          <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+            <h4 className="text-xl font-bold text-white mb-6">Investor Profit by Scenario</h4>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart
+                data={[
+                  { scenario: "Bear Case", profit: 0 },
+                  { scenario: "Base Case", profit: 160000 },
+                  { scenario: "Bull Case", profit: 480000 }
+                ]}
+                margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
+                <XAxis
+                  dataKey="scenario"
+                  stroke="#9CA3AF"
+                />
+                <YAxis
+                  stroke="#9CA3AF"
+                  tickFormatter={(value) => `£${(value / 1000).toFixed(0)}K`}
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: '#1F2937',
+                    border: '1px solid #374151',
+                    borderRadius: '8px',
+                    color: '#fff'
+                  }}
+                  formatter={(value) => `£${value.toLocaleString()}`}
+                />
+                <Bar dataKey="profit" fill="#10b981" radius={[8, 8, 0, 0]}>
+                  {[
+                    { scenario: "Bear Case", profit: 0 },
+                    { scenario: "Base Case", profit: 160000 },
+                    { scenario: "Bull Case", profit: 480000 }
+                  ].map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={index === 0 ? '#ef4444' : index === 1 ? '#3b82f6' : '#10b981'}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            <p className="text-gray-400 text-xs mt-4 text-center">
+              LP profit share (80% of total fund profit) across performance scenarios
+            </p>
+          </div>
+        </div>
+
+        {/* Comparative Summary Table */}
+        <div className="mt-12 bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-emerald-500/30">
+          <h4 className="text-xl font-bold text-white mb-6">Scenario Comparison Summary</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="py-3 px-4 text-emerald-400 font-semibold">Metric</th>
+                  <th className="py-3 px-4 text-orange-400 font-semibold">Bear Case (1x)</th>
+                  <th className="py-3 px-4 text-blue-400 font-semibold">Base Case (2x)</th>
+                  <th className="py-3 px-4 text-emerald-400 font-semibold">Bull Case (4x)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-800">
+                  <td className="py-3 px-4 text-gray-300">Fund Value</td>
+                  <td className="py-3 px-4 text-white">£200,000</td>
+                  <td className="py-3 px-4 text-white">£400,000</td>
+                  <td className="py-3 px-4 text-white">£800,000</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-3 px-4 text-gray-300">Total Profit</td>
+                  <td className="py-3 px-4 text-white">£0</td>
+                  <td className="py-3 px-4 text-white">£200,000</td>
+                  <td className="py-3 px-4 text-white">£600,000</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-3 px-4 text-gray-300">Team Carry Pool (20%)</td>
+                  <td className="py-3 px-4 text-white">£0</td>
+                  <td className="py-3 px-4 text-white">£40,000</td>
+                  <td className="py-3 px-4 text-white">£120,000</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-3 px-4 text-gray-300">Investor Returns (80%)</td>
+                  <td className="py-3 px-4 text-white">£0</td>
+                  <td className="py-3 px-4 text-white">£160,000</td>
+                  <td className="py-3 px-4 text-white">£480,000</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="py-3 px-4 text-gray-300">Lee Total Income</td>
+                  <td className="py-3 px-4 text-white">£75,000</td>
+                  <td className="py-3 px-4 text-white">£105,000</td>
+                  <td className="py-3 px-4 text-white">£165,000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-gray-300">Total Team Compensation</td>
+                  <td className="py-3 px-4 text-white">£200,000</td>
+                  <td className="py-3 px-4 text-white">£250,000</td>
+                  <td className="py-3 px-4 text-white">£350,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </motion.div>
