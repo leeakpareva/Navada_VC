@@ -1,8 +1,16 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# Raw media never goes in git — large, binary, and regenerable output lives in library/
+inbox/
+*.mp4
+*.mov
+*.m4v
+*.mkv
+*.webm
+*.wav
 
-/src/generated/prisma
+# Python
+__pycache__/
+*.pyc
+.venv/
 
-# Production build output
-/build
+# Model caches
+.cache/

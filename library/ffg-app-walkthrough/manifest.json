@@ -1,0 +1,92 @@
+{
+  "slug": "ffg-app-walkthrough",
+  "source": {
+    "filename": "0f81882d-_users_6fc622ff88d24a279e2ff834ce289589_generated_b04c4bd9ca92415eb3d7fb42fd227d46_generated_video.mp4",
+    "sha256": "798fc557bc61c6b805ec89058abb7b21b8a03ab0d6b8f8d2451e0b7ecbfdb2ae",
+    "duration_s": 10.042,
+    "size_bytes": 4500825,
+    "video": {
+      "codec": "h264",
+      "width": 784,
+      "height": 1168,
+      "fps": 24.0,
+      "frames": 241
+    },
+    "audio": {
+      "codec": "aac",
+      "channels": 2,
+      "sample_rate": "48000"
+    }
+  },
+  "extraction": {
+    "uniform_interval_s": 1.0,
+    "scene_threshold": 0.2,
+    "frame_width": 1024,
+    "frame_count": 11,
+    "contact_sheet": "contact.jpg"
+  },
+  "transcript": {
+    "backend": "faster-whisper/base",
+    "language": "en",
+    "language_probability": 0.568,
+    "segments": 0,
+    "has_speech": false
+  },
+  "frames": [
+    {
+      "file": "frames/s0001.jpg",
+      "t": 0.0,
+      "kind": "scene"
+    },
+    {
+      "file": "frames/u0001.jpg",
+      "t": 0.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0002.jpg",
+      "t": 1.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0003.jpg",
+      "t": 2.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0004.jpg",
+      "t": 3.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0005.jpg",
+      "t": 4.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0006.jpg",
+      "t": 5.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0007.jpg",
+      "t": 6.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0008.jpg",
+      "t": 7.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0009.jpg",
+      "t": 8.0,
+      "kind": "uniform"
+    },
+    {
+      "file": "frames/u0010.jpg",
+      "t": 9.0,
+      "kind": "uniform"
+    }
+  ]
+}

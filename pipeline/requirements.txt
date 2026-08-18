@@ -1,0 +1,2 @@
+# ASR backend. CPU-only, no API key, no egress after the model is cached.
+faster-whisper==1.2.1
